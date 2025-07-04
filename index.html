@@ -8,6 +8,7 @@
   <meta name="description" content="UC（ユーシー）は、飲食店・美容室などのスモールビジネス向けに、Web集客を最大化するホームページ制作・Googleマップ最適化・SNSサポートを提供するサービスです。">
   <meta name="keywords" content="ユーシー, UC, ホームページ制作, Googleマップ, SNS運用, 飲食店 集客, 店舗デザイン, LINE予約, スモールビジネス, 清水悠世">
   <meta name="author" content="清水悠世">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     html, body {
       margin: 0;
@@ -27,8 +28,6 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      opacity: 0;
-      animation: fadeIn 1s ease-in-out forwards;
     }
     header h1 {
       margin: 0;
@@ -45,36 +44,33 @@
       color: #00bcd4;
     }
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
       height: 90vh;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
       color: white;
-      font-size: 2.7rem;
+      font-size: 3rem;
       font-weight: bold;
       text-shadow: 0 2px 6px rgba(0,0,0,0.5);
       padding: 0 20px;
-      animation: slideUp 1s ease-out forwards;
+      animation: fadeInHero 1.5s ease-in-out;
     }
     .section {
       max-width: 1000px;
-      margin: 80px auto;
+      margin: 100px auto;
       padding: 0 20px;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeInUp 1s ease-in-out forwards;
     }
     .section h2 {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       margin-bottom: 20px;
       border-bottom: 2px solid #eee;
       padding-bottom: 10px;
     }
     .section p, .section ul {
-      font-size: 1.15rem;
-      line-height: 1.9;
+      font-size: 1.2rem;
+      line-height: 2;
     }
     .section ul li {
       margin-bottom: 12px;
@@ -82,30 +78,30 @@
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 30px;
       margin-top: 40px;
     }
     .card {
-      background: #f9f9f9;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
       padding: 30px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.4s, box-shadow 0.4s;
     }
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
     }
     .cta {
       text-align: center;
-      margin: 60px auto;
+      margin: 80px auto;
     }
     .cta a {
       background-color: #000;
       color: #fff;
       text-decoration: none;
-      padding: 15px 30px;
-      font-size: 1.1rem;
+      padding: 16px 36px;
+      font-size: 1.2rem;
       border-radius: 30px;
       transition: background 0.3s;
     }
@@ -114,19 +110,13 @@
     }
     footer {
       text-align: center;
-      padding: 50px 20px;
+      padding: 60px 20px;
       background-color: #f5f5f7;
       color: #86868b;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
+    @keyframes fadeInHero {
+      from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
@@ -146,7 +136,7 @@
     あなたの店舗を、もっと選ばれる存在に。
   </div>
 
-  <div class="section" id="service">
+  <div class="section" id="service" data-aos="fade-up">
     <h2>サービス紹介</h2>
     <p>UC（ユーシー）は、スモールビジネスのための<br>「デジタル集客力UP支援サービス」です。</p>
     <ul>
@@ -157,30 +147,30 @@
     </ul>
   </div>
 
-  <div class="section" id="features">
+  <div class="section" id="features" data-aos="fade-up">
     <h2>UCが選ばれる3つの理由</h2>
     <div class="cards">
-      <div class="card">
+      <div class="card" data-aos="zoom-in" data-aos-delay="100">
         <h3>① デザイン×戦略</h3>
         <p>第一印象の美しさ＋検索・動線を意識した設計で成果に直結。</p>
       </div>
-      <div class="card">
+      <div class="card" data-aos="zoom-in" data-aos-delay="200">
         <h3>② 手間なしサポート</h3>
         <p>写真撮影・地図登録・SNSテンプレも丸ごとお任せ。手離れ◎。</p>
       </div>
-      <div class="card">
+      <div class="card" data-aos="zoom-in" data-aos-delay="300">
         <h3>③ コストパフォーマンス</h3>
         <p>初期費用は業界最安クラス。必要なものだけをプロ品質で。</p>
       </div>
     </div>
   </div>
 
-  <div class="section" id="profile">
+  <div class="section" id="profile" data-aos="fade-up">
     <h2>代表プロフィール</h2>
     <p>清水 悠世（Yusei Shimizu）｜UC代表<br>「魅せ方」や「伝え方」にこだわり、<br>中小店舗の“ファンづくり”を支援しています。</p>
   </div>
 
-  <div class="section" id="contact">
+  <div class="section" id="contact" data-aos="fade-up">
     <h2>お問い合わせ</h2>
     <p>気軽に相談できるLINE・メール受付中。<br>
     📩 LINE：@uc_design（友達追加で1分見積）<br>
@@ -197,5 +187,13 @@
   <footer>
     &copy; 2025 UC（ユーシー） All rights reserved.
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 </html>
