@@ -33,6 +33,20 @@
       margin: 0;
       font-size: 1.5rem;
     }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+    }
+    nav {
+      display: flex;
+    }
     nav a {
       color: #fff;
       margin-left: 20px;
@@ -42,6 +56,27 @@
     }
     nav a:hover {
       color: #00bcd4;
+    }
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: #000;
+        padding: 10px;
+        border-radius: 8px;
+      }
+      nav.active {
+        display: flex;
+      }
+      nav a {
+        margin: 10px 0;
+      }
     }
     .hero {
       background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
@@ -124,7 +159,12 @@
 <body>
   <header>
     <h1>UC（ユーシー）｜店舗向けホームページ制作 & SNS運用サポート</h1>
-    <nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="navMenu">
       <a href="#service">サービス</a>
       <a href="#features">特長</a>
       <a href="#profile">プロフィール</a>
@@ -194,6 +234,10 @@
       duration: 1000,
       once: true
     });
+    function toggleMenu() {
+      const nav = document.getElementById('navMenu');
+      nav.classList.toggle('active');
+    }
   </script>
 </body>
 </html>
