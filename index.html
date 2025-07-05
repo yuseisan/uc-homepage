@@ -9,180 +9,105 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
+    html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-    body {
       font-family: 'Noto Sans JP', sans-serif;
-      background: #fdfdfd;
-      color: #1d1d1f;
     }
     header {
-      background-color: #000;
-      color: #fff;
-      padding: 16px 24px;
+      background: white;
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 999;
+      border-bottom: 1px solid #eee;
     }
     header h1 {
-      font-size: 1.2rem;
-    }
-    .menu-btn {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .menu-btn span {
-      height: 3px;
-      width: 25px;
-      background: white;
-      margin: 4px 0;
-    }
-    nav {
-      display: flex;
+      font-size: 1.5rem;
+      color: #003366;
     }
     nav a {
-      color: #fff;
-      margin-left: 16px;
+      margin-left: 20px;
+      color: #003366;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-weight: bold;
     }
-    nav a:hover {
-      color: #00bcd4;
-    }
-    @media (max-width: 768px) {
-      .menu-btn {
-        display: flex;
-      }
-      nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background: #000;
-        padding: 10px;
-        border-radius: 8px;
-      }
-      nav.active {
-        display: flex;
-      }
-    }
-    .hero {
-      height: 90vh;
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1400&q=80') center/cover;
-      color: white;
+    .main-visual {
+      margin-top: 80px;
+      background: url('https://www.suntory.co.jp/area/img/area_main.jpg') no-repeat center center/cover;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      font-size: 2.5rem;
       text-align: center;
-      font-size: 2.4rem;
-      padding: 20px;
-      animation: fadeInHero 1.5s ease-in-out;
     }
-    .section {
-      max-width: 960px;
-      margin: 80px auto;
-      padding: 0 20px;
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
     }
-    .section h2 {
-      font-size: 1.8rem;
+    section h2 {
+      font-size: 2rem;
       margin-bottom: 20px;
-      text-align: center;
+      color: #003366;
     }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
-      margin-top: 32px;
-    }
-    .card {
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .cta {
-      text-align: center;
-      margin: 60px auto;
-    }
-    .cta a {
-      background-color: #000;
-      color: #fff;
-      text-decoration: none;
-      padding: 14px 28px;
-      border-radius: 30px;
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
     }
     footer {
+      background: #003366;
+      color: white;
       text-align: center;
-      padding: 40px;
-      background-color: #eee;
-      font-size: 0.9rem;
-      color: #555;
-    }
-    @keyframes fadeInHero {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      padding: 30px;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>UC（ユーシー）</h1>
-    <div class="menu-btn" onclick="document.querySelector('nav').classList.toggle('active')">
-      <span></span><span></span><span></span>
-    </div>
     <nav>
-      <a href="index.html">ホーム</a>
-      <a href="services.html">サービス</a>
-      <a href="about.html">プロフィール</a>
-      <a href="contact.html">お問い合わせ</a>
+      <a href="#vision">ビジョン</a>
+      <a href="#service">サービス</a>
+      <a href="#contact">お問い合わせ</a>
     </nav>
   </header>
 
-  <section class="hero">
-    あなたの店舗を、もっと選ばれる存在に。
+  <div class="main-visual">
+    あなたの挑戦に、デジタルの力を。
+  </div>
+
+  <section id="vision">
+    <h2>UCのビジョン</h2>
+    <p>UC（ユーシー）は、地域に根ざしたスモールビジネスの魅力を最大限に引き出すデジタルパートナーです。<br>
+    私たちは一人ひとりの挑戦に寄り添い、「選ばれる店舗づくり」を支援します。</p>
   </section>
 
-  <section class="section">
-    <h2>サービス内容（例）</h2>
-    <div class="cards">
-      <div class="card" data-aos="fade-up">
-        <h3>ホームページ制作</h3>
-        <p>STUDIO／WordPressで高品質なWebサイトを構築。</p>
-      </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="100">
-        <h3>Googleマップ最適化</h3>
-        <p>Googleビジネスプロフィールの情報設計、投稿代行など。</p>
-      </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="200">
-        <h3>SNS素材デザイン</h3>
-        <p>InstagramやLINE投稿用テンプレ・バナー画像を提供。</p>
-      </div>
-    </div>
+  <section id="service">
+    <h2>サービス</h2>
+    <p>
+      ・ホームページ制作（STUDIO／WordPress）<br>
+      ・Googleマップ最適化支援（情報設計／投稿代行）<br>
+      ・SNS運用素材のデザインテンプレート提供<br>
+      ・店舗・商品写真の撮影・構図提案・加工対応 など
+    </p>
   </section>
 
-  <section class="cta">
-    <a href="contact.html">無料相談してみる</a>
+  <section id="contact">
+    <h2>お問い合わせ</h2>
+    <p>ご相談・お見積りはお気軽にどうぞ。LINE公式アカウントまたは以下フォームよりご連絡ください。</p>
   </section>
 
   <footer>
     &copy; 2025 UC（ユーシー）. All rights reserved.
   </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
 </body>
 </html>
